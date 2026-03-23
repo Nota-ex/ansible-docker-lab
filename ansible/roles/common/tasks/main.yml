@@ -1,0 +1,34 @@
+- name: Actualizar APT
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Crear usuario itla
+  user:
+    name: itla
+    state: present
+    groups: sudo
+    shell: /bin/bash
+
+- name: Crear carpeta app
+  file:
+    path: /home/ansible/app
+    state: directory
+    owner: ansible
+    group: ansible
+    mode: '0755'
+
+- name: Copiar archivo hola.txt
+  copy:
+    src: hola.txt
+    dest: /home/ansible/app/hola.txt
+    owner: ansible
+    group: ansible
+    mode: '0644'
+
+- name: Instalar paquetes
+  apt:
+    name:
+      - cowsay
+      - htop
+    state: present

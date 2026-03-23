@@ -1,0 +1,16 @@
+# Ansible
+*.retry
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# SSH keys (por seguridad)
+*.pem
+*.key
+
+# Python cache
+__pycache__/

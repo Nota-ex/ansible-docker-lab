@@ -1,0 +1,6 @@
+- name: Configuracion base de servidores
+  hosts: ubuntu_servers
+  become: yes
+
+  roles:
+    - common
